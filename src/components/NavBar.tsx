@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { BsSunFill, BsMoonFill} from 'react-icons/bs';
 import {BiMenuAltRight} from "react-icons/bi"
+import Link from 'next/link';
 
 
 const NavBar = () => {
@@ -26,8 +27,13 @@ const [navOpen, setNavOpen ] = useState(false)
     <div  className="hidden sticky top-0 h-20 bg-white/80 dark:bg-black/80 text-black dark:text-white lg:flex justify-between items-center text-xl px-8">
     <p>LOGO</p>
     <ul className="flex gap-8 ">
+      
+    <Link href="/">  
       <li className='hover:text-[#E2A64A] duration-500 cursor-pointer '>Home</li>
-      <li className='hover:text-[#E2A64A] duration-500 cursor-pointer' >Projects</li>
+      </Link>
+
+      <Link href="projects">      <li className='hover:text-[#E2A64A] duration-500 cursor-pointer' >Projects</li>
+</Link>
       <li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Contact</li>
     </ul>
 <div className='cursor-pointer' onClick={()=>{setDarkmode(!darkMode)}}>

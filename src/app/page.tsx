@@ -6,7 +6,7 @@ import towel from "../../public/towel.png"
 import SkillCard from "@/components/SkillCard"
 export default function Home() {
   return (
-      <div className='text-center text-black dark:text-white'>
+      <div className='text-center text-black dark:text-white mx-auto max-w-[1200px]'>
         <h4>Hello, I'm</h4>
         <h1>Steven Chiang</h1>
         <h4>Frontend Developer</h4>
@@ -24,7 +24,7 @@ export default function Home() {
 
         <div>
           <h3>Frontend Skills</h3>
-          <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 w-full lg:w-4/5">
+          <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12  ">
             <SkillCard/>            <SkillCard/>
             <SkillCard/>
             <SkillCard/>
@@ -32,7 +32,7 @@ export default function Home() {
             <SkillCard/>
           </div>
           <h3>Backend Skills</h3>
-          <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 w-full lg:w-4/5">
+          <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 ">
             <SkillCard/>            <SkillCard/>
             <SkillCard/>
             <SkillCard/>

@@ -1,11 +1,14 @@
 import React from 'react'
 
-type ButtonProps = { text: React.ReactNode, link: React.ReactNode };
+type ButtonProps = { text: React.ReactNode, link: React.ReactNode ,isBorder:React.ReactNode  };
 
 
-const GeneralButton = ({text,link}:ButtonProps) => {
+const GeneralButton = ({text,link,isBorder}:ButtonProps) => {
+
   return (
-    <button className='border mx-3 px-8 py-4 rounded-lg'>{text}</button>
+
+        <button className={`${isBorder? "border-black dark:border-white" : "border-transparent bg-[#E2A64A]" } border-2  mx-3 px-8 py-4 rounded-xl `}>{text}</button>
+
   )
 }
 

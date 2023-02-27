@@ -4,9 +4,10 @@ import GeneralButton from "../components/GeneralButton"
 
 import towel from "../../public/towel.png"
 import SkillCard from "@/components/SkillCard"
+import ProjectCard from "@/components/ProjectCard"
 export default function Home() {
   return (
-      <div className='text-center text-black dark:text-white mx-auto max-w-[1200px]'>
+      <div className='text-center text-black dark:text-white mx-auto '>
         <h4>Hello, I'm</h4>
         <h1>Steven Chiang</h1>
         <h4>Frontend Developer</h4>
@@ -15,7 +16,7 @@ export default function Home() {
           <GeneralButton text="Go to projects" link="#" isBorder={false}/>
         </div>
 
-        <div className="flex flex-col md:flex-row " >
+        <div className="mx-auto flex flex-col md:flex-row max-w-[1300px] " >
           <div className=" flex-1">
           <Image className="mx-auto" alt="photo" width="250" height="250" src={towel} ></Image>
           </div>
@@ -24,7 +25,7 @@ export default function Home() {
 
         <div>
           <h3>Frontend Skills</h3>
-          <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12  ">
+          <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 max-w-[1000px] p-8 ">
             <SkillCard/>            <SkillCard/>
             <SkillCard/>
             <SkillCard/>
@@ -32,13 +33,20 @@ export default function Home() {
             <SkillCard/>
           </div>
           <h3>Backend Skills</h3>
-          <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 ">
+          <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 max-w-[1000px] p-8 ">
             <SkillCard/>            <SkillCard/>
             <SkillCard/>
             <SkillCard/>
             <SkillCard/>
             <SkillCard/>
           </div>
+          <h3>Projects</h3>
+          <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 max-w-[1600px]">
+<ProjectCard/><ProjectCard/>
+<ProjectCard/><ProjectCard/><ProjectCard/>
+<ProjectCard/>
+
+</div>
         </div>
       </div>
   )

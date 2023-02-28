@@ -24,7 +24,7 @@ const [navOpen, setNavOpen ] = useState(false)
   },[darkMode])
   return (
     < >
-    <div  className="hidden sticky top-0 h-20 bg-white/80 dark:bg-black/80 text-black dark:text-white lg:flex justify-between items-center text-xl px-8">
+    <div  className="z-10 hidden sticky top-0 h-20 bg-white/80 dark:bg-black/80 text-black dark:text-white lg:flex justify-between items-center text-xl px-8">
     <p>LOGO</p>
     <ul className="flex gap-8 ">
       
@@ -45,7 +45,7 @@ const [navOpen, setNavOpen ] = useState(false)
    
    {/* 行動裝置 */}
 
-   <div  className="flex sticky top-0 h-20 bg-white/80 dark:bg-black/80 text-black dark:text-white lg:hidden justify-between items-center text-xl px-8">
+   <div  className="z-10 flex sticky top-0 h-20 bg-white/80 dark:bg-black/80 text-black dark:text-white lg:hidden justify-between items-center text-xl px-8">
    <p >LOGO</p>
 <BiMenuAltRight className='block lg:hidden' onClick={()=>{
   setNavOpen(!navOpen)

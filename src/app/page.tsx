@@ -41,7 +41,7 @@ export default function Home() {
             <SkillCard/>
           </div>
           <h3>Projects</h3>
-          <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 max-w-[1600px]">
+          <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 max-w-[1200px]">
 <ProjectCard/><ProjectCard/>
 <ProjectCard/><ProjectCard/><ProjectCard/>
 <ProjectCard/>

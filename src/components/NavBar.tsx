@@ -25,7 +25,11 @@ const [navOpen, setNavOpen ] = useState(false)
   return (
     < >
     <div  className="z-10 hidden sticky top-0 h-20 bg-white/80 dark:bg-black/80 text-black dark:text-white lg:flex justify-between items-center text-xl px-8">
-    <p>LOGO</p>
+    <Link href="/">  
+
+    <p className='cursor-pointer font-bold'>STEVEN CHIANG</p>
+    </Link>
+
     <ul className="flex gap-8 ">
       
     <Link href="/">  
@@ -34,7 +38,9 @@ const [navOpen, setNavOpen ] = useState(false)
 
       <Link href="projects">      <li className='hover:text-[#E2A64A] duration-500 cursor-pointer' >Projects</li>
 </Link>
-      <li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Contact</li>
+<Link href="contact">  <li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Contact</li>
+</Link>
+
     </ul>
 <div className='cursor-pointer' onClick={()=>{setDarkmode(!darkMode)}}>
     {darkMode?<BsSunFill className='hover:text-[#E2A64A] duration-500 cursor-pointer' /> :<BsMoonFill className='hover:text-[#E2A64A] duration-500 cursor-pointer'/>    }
@@ -46,7 +52,7 @@ const [navOpen, setNavOpen ] = useState(false)
    {/* 行動裝置 */}
 
    <div  className="z-10 flex sticky top-0 h-20 bg-white/80 dark:bg-black/80 text-black dark:text-white lg:hidden justify-between items-center text-xl px-8">
-   <p >LOGO</p>
+   <p>STEVEN CHIANG</p>
 <BiMenuAltRight className='block lg:hidden' onClick={()=>{
   setNavOpen(!navOpen)
 }}/>

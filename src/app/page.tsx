@@ -4,7 +4,6 @@ import GeneralButton from "../components/GeneralButton"
 
 import towel from "../../public/towel.png"
 import SkillCard from "@/components/SkillCard"
-import ProjectCard from "@/components/ProjectCard"
 export default function Home() {
   return (
       <div className='text-center text-black dark:text-white mx-auto '>
@@ -13,7 +12,7 @@ export default function Home() {
         <h4>Frontend Developer</h4>
         <div className='mx-auto'>
           <GeneralButton text="Download CV" link="#" isBorder={true}/>
-          <GeneralButton text="Go to projects" link="#" isBorder={false}/>
+          <GeneralButton text="Go to projects" link="projects#" isBorder={false}/>
         </div>
 
         <div className="mx-auto flex flex-col md:flex-row max-w-[1300px] " >
@@ -40,13 +39,9 @@ export default function Home() {
             <SkillCard/>
             <SkillCard/>
           </div>
-          <h3>Projects</h3>
-          <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 max-w-[1200px]">
-<ProjectCard/><ProjectCard/>
-<ProjectCard/><ProjectCard/><ProjectCard/>
-<ProjectCard/>
+         
+          <GeneralButton text="Go to projects" link="projects" isBorder={false}/>
 
-</div>
         </div>
       </div>
   )

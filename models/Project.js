@@ -15,6 +15,14 @@ const ProjectSchema = new mongoose.Schema({
     skils:{
         type: [String],
         required: true
+    }, 
+    github:{
+        type: String,
+        required: true
+    }, 
+    link:{
+        type: String,
+        required: true
     }
 },
 {timestamps: true}

@@ -1,9 +1,13 @@
 import "./globals.css"
 import Image from 'next/image'
 import GeneralButton from "../components/GeneralButton"
-
 import towel from "../../public/towel.png"
 import SkillCard from "@/components/SkillCard"
+
+
+
+
+
 export default function Home() {
   return (
       <div className='text-center text-black dark:text-white mx-auto '>
@@ -46,3 +50,4 @@ export default function Home() {
       </div>
   )
 }
+

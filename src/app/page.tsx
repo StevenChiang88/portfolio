@@ -22,7 +22,7 @@ export default function Home() {
            <div className="m-auto p-12 flex-1 "><h5 className="text-left">James entered the game with 38,352 points, needing 36 to overtake Abdul-Jabbar. He finished the night with 38 points on 13-of-20 shooting (4-of-6 from 3) to go along with 7 rebounds, 3 assists and 3 steals.</h5></div> 
         </div>
 
-        <div>
+        <div className="my-16">
           <h3>Frontend Skills</h3>
           <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 max-w-[1000px] p-8 ">
             <SkillCard/>            <SkillCard/>

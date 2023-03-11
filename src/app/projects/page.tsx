@@ -16,7 +16,7 @@ const ProjectsPage = () => {
 
 </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 max-w-[1600px] gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 max-w-[1600px] gap-8">
 <ProjectCard/><ProjectCard/>
 <ProjectCard/><ProjectCard/><ProjectCard/>
 <ProjectCard/>

@@ -5,9 +5,9 @@ import towel from "../../public/towel.png"
 import SkillCard from "@/components/SkillCard"
 
 
+const front =["html","css","js","tailwind","react","nextjs"]
 
-
-
+const back =["nodejs","express","mongodb"]
 export default function Home() {
 
   return (
@@ -30,19 +30,13 @@ export default function Home() {
         <div className="my-16">
           <h3>Frontend Skills</h3>
           <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 max-w-[1000px] p-8 ">
-            <SkillCard/>            <SkillCard/>
-            <SkillCard/>
-            <SkillCard/>
-            <SkillCard/>
-            <SkillCard/>
+       {front.map((front)=> <SkillCard skill={front}/> )}
+      
           </div>
           <h3>Backend Skills</h3>
           <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 max-w-[1000px] p-8 ">
-            <SkillCard/>            <SkillCard/>
-            <SkillCard/>
-            <SkillCard/>
-            <SkillCard/>
-            <SkillCard/>
+          {back.map((back)=> <SkillCard skill={back}/> )}
+
           </div>
          
           <GeneralButton text="Go to projects" link="projects" isBorder={false}/>

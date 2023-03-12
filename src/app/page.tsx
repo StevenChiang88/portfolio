@@ -8,7 +8,9 @@ import SkillCard from "@/components/SkillCard"
 
 
 
-export default function Home() {
+export default function Home({projectList}) {
+console.log(projectList,"首頁")
+
   return (
       <div className='text-center text-black dark:text-white mx-auto '>
         <h4>Hello, I'm</h4>
@@ -51,3 +53,12 @@ export default function Home() {
   )
 }
 
+export const getServerSideProps = async()=>{
+
+  const res  = await axios.get("http://localhost:3000/api/projects");
+return{
+props:{
+  ProjectList :res.data
+}
+}
+} 

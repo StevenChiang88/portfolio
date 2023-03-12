@@ -5,32 +5,32 @@ import Corgishopscreen from '../../../public/Corgishopscreen.png'
 import ProjectCard from '@/components/ProjectCard'
 import ProjectCategory from '@/components/ProjectCategory'
 import axios from "axios"
-import { GetServerSideProps } from 'next'
-type SingleData = {
-  "title": string,
-  "desc": string,
-  "img": string,
-  "github": string,
-  "link": string,
-  "skils": [string],
-  "createdAt": string,
-  "updatedAt":string,
-  "__v": number
-}
-type FetchData = [SingleData]
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next'
+// type SingleData = {
+//   "title": String,
+//   "desc": String,
+//   "img": String,
+//   "github": String,
+//   "link": String,
+//   "skils": [String],
+//   "createdAt": String,
+//   "updatedAt":String,
+//   "__v": Number
+// }
+// type FetchData = [SingleData]
 
 
 
-const ProjectsPage = ({projectList}:{projectList:SingleData}) => {
+const ProjectsPage = ({projectList})  =>{
 
-  async function test (){
-  const res  = await axios.get("http://localhost:3000/api/projects");
-  console.log(res.data,"測試")
+//   async function test (){
+//   const res  = await axios.get("http://localhost:3000/api/projects");
+//   console.log(res.data,"測試")
 
-  }
+//   }
 
-test()
-
+// test()
+console.log(projectList)
 
 return (
     <div className='flex flex-col items-center'>
@@ -52,16 +52,16 @@ return (
   )
 }
 
-export default ProjectsPage
 
+export const getServerSideProps = async()=>{
 
- export const getServerSideProps: GetServerSideProps = async()=>{
-
-    const res  = await axios.get("http://localhost:3000/api/projects");
-
+  const res  = await axios.get("http://localhost:3000/api/projects");
 return{
-  props:{
-    ProjectList :res
-  }
+props:{
+  ProjectList :res.data
 }
- } 
+}
+} 
+
+
+export default ProjectsPage

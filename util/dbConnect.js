@@ -28,8 +28,8 @@ async function dbConnect() {
     const opts = {
       bufferCommands: false,
     }
-    // 系統要求
-    mongoose.set("strictQuery", false);
+    // // 系統要求
+    // mongoose.set("strictQuery", false);
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
       return mongoose
@@ -37,7 +37,7 @@ async function dbConnect() {
   }
 
   try {
-    cached.conn = await cached.promise
+    cached.conn = await cached.promise 
   } catch (e) {
     cached.promise = null
     throw e

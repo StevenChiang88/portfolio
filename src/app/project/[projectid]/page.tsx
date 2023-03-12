@@ -1,10 +1,27 @@
+
 import GeneralBanner from '@/components/GeneralBanner'
 import GeneralButton from '@/components/GeneralButton'
 import UsingSkill from '@/components/UsingSkill'
+import axios from 'axios'
 import Image from 'next/image'
+import { usePathname, useRouter } from 'next/navigation'
+import { type } from 'os'
 import React from 'react'
 import Corgishopscreen from '../../../../public/Corgishopscreen.png'
-const ProjectPage = () => {
+
+
+// async function fetchData(id:String) {
+//   const res = await axios.get("http://localhost:3000/api/projects");
+//   return res.data;
+// }
+
+const ProjectPage = async()=> {
+
+
+// const singleProject = await fetchData(router.pathname)
+
+// console.log(singleProject,"單一數據")
+
   return (
     <div >
       <GeneralBanner text="xxx案例" />
@@ -36,3 +53,4 @@ const ProjectPage = () => {
 }
 
 export default ProjectPage
+

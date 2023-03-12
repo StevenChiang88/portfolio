@@ -1,5 +1,7 @@
+// "use client"
+
 import GeneralBanner from "@/components/GeneralBanner";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProjectCategory from "@/components/ProjectCategory";
 import axios from "axios";
 import ProjectCard from "@/components/ProjectCard";
@@ -22,15 +24,19 @@ async function fetchData() {
 }
 
 
-
 const ProjectsPage = async () => {
   const projectLists:SingleData[] = await fetchData();
+//   const [filteredData, setFilteredData] = useState()
+
+// useEffect(()=>{setFilteredData(projectLists)},[projectLists])
+
 
   const skillhandler = (skill:String)=>{
-  projectLists.filter(project=>{
+    projectLists.filter(project=>{
     project.skils[0] == skill
   })
   }
+
 
   return (
     <div className="flex flex-col items-center">
@@ -43,9 +49,18 @@ const ProjectsPage = async () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 max-w-[1600px] gap-8">
-        {projectLists.map((project) => (
+        {/* {
+        filteredData? filteredData.map((project) => (
           <ProjectCard  project={project} />
-        ))}
+        )) : <p>loading....</p>
+       } */}
+
+
+       {
+       projectLists.map((project) => (
+          <ProjectCard  project={project} />
+       ))
+        }
       </div>
     </div>
   );

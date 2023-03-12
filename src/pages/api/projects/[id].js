@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   if (method === "GET") {
     try {
       const project = await Project.findById(id);
-      res.status(200).json(projects);
+      res.status(200).json(project);
     } catch (err) {
       res.status(500).json(err);
     }

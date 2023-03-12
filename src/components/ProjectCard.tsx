@@ -19,7 +19,6 @@ type SingleData = {
   "__v": Number
 }
 const ProjectCard = ({project}:{project:SingleData}) => {
-console.log(project.title, "在card內")
 
   return (
     <div className='relative mx-auto my-8 shadow-lg  w-[350px] md:w-[500px] h-[200px]  md:h-[250px] '>

@@ -1,12 +1,10 @@
 import Image from 'next/image'
-import React from 'react'
+import React,{FC} from 'react'
 import roxscreen from '../../public/roxscreen.png'
 import {AiOutlineFileSearch} from 'react-icons/ai'
 import Link from 'next/link'
 
-type ProjectProps = { project: React.ReactNode };
-
-type SingleData = {
+type ProjectProps = { project: {
   "_id":String,
   "title": String,
   "desc": String,
@@ -17,8 +15,9 @@ type SingleData = {
   "createdAt": String,
   "updatedAt":String,
   "__v": Number
-}
-const ProjectCard = ({project}:{project:SingleData}) => {
+} };
+
+const ProjectCard:FC<ProjectProps> = ({project}) => {
 
   return (
     <div className='relative mx-auto my-8 shadow-lg  w-[350px] md:w-[500px] h-[200px]  md:h-[250px] '>

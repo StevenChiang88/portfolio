@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import axios from "axios";
 import { type } from "os";
 import AddProject from "@/components/AddProject";
@@ -21,7 +21,7 @@ async function fetchData() {
 }
 
 
-const AdminPage = async () => {
+const AdminPage  = async () => {
   const projectLists:SingleData[] = await fetchData();
 
 //   const [addProjectOpen , setAddProjectOpen] = useState(false)

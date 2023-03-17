@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FC } from 'react'
 import {BsFillTelephoneFill ,BsGithub} from 'react-icons/bs'
 import{BiMailSend} from 'react-icons/bi'
-const Footer = () => {
+const Footer:FC = () => {
   return (
     <div className='flex flex-col items-center p-10 bg-slate-600 mt-10'>
      <div className='flex gap-8'>

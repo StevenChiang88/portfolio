@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import React from 'react'
+import React, { FC } from 'react'
 
-type ButtonProps = { text: React.ReactNode, link: React.ReactNode ,isBorder:React.ReactNode  };
+type ButtonProps = { text: string, link: string ,isBorder:Boolean  };
 
 
-const GeneralButton = ({text,link,isBorder}:ButtonProps) => {
+const GeneralButton :FC<ButtonProps> = ({text,link,isBorder}) => {
 
   return (
 <Link href={`/${link}`}>

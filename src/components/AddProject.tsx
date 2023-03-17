@@ -1,8 +1,8 @@
 "use client"
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState,FC } from 'react'
 
-const AddProject = () => {
+const AddProject :FC = () => {
 const [project, setProject] = useState()
 const [file, setFile] = useState<File | any>(null)
 
@@ -10,11 +10,15 @@ const uploadToCloudinary = async()=>{
   const data = new FormData()
   data.append("file",file)
   data.append("upload_preset","portfolio")
-  data.append("cloud_name", "dekp91sle");
-
   try{
-const uploadRes =await axios.post("https://api.cloudinary.com/v1_1/dekp91sle/images/upload",data)
-console.log(uploadRes.data,"網址")
+
+    const uploadPreSetting = axios.create({
+      baseURL: 'https://api.cloudinary.com/v1_1/dekp91sle/images',
+      withCredentials: true,
+    })
+const uploadRes =await uploadPreSetting.post("/upload",data)
+console.log(uploadRes.data)
+
   }
   catch(err){
     console.log(err)

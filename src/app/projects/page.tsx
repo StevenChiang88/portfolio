@@ -1,11 +1,10 @@
 // "use client"
-
 import GeneralBanner from "@/components/GeneralBanner";
-import React, { useEffect, useState } from "react";
 import ProjectCategory from "@/components/ProjectCategory";
 import axios from "axios";
 import ProjectCard from "@/components/ProjectCard";
 import { type } from "os";
+import { type NextPage } from "next";
 type SingleData = {
   "_id":String,
   "title": String,
@@ -18,13 +17,15 @@ type SingleData = {
   "updatedAt":String,
   "__v": Number
 }
+
 async function fetchData() {
   const res = await axios.get("http://localhost:3000/api/projects");
   return res.data;
 }
 
 
-const ProjectsPage = async () => {
+const ProjectsPage: NextPage = async () => {
+  
   const projectLists:SingleData[] = await fetchData();
 //   const [filteredData, setFilteredData] = useState()
 
@@ -55,15 +56,29 @@ const ProjectsPage = async () => {
         )) : <p>loading....</p>
        } */}
 
-
-       {
+<>
+{
        projectLists.map((project) => (
           <ProjectCard  project={project} />
        ))
         }
+</>
+     
       </div>
     </div>
   );
 };
 
 export default ProjectsPage;
+
+
+// export const getServerSideProps:FC = async()=>{
+//     const res = await axios.get("http://localhost:3000/api/projects");
+//   return
+//  {
+//   props:{
+//     projectLists:  res.data
+
+//   }
+//  } 
+// }

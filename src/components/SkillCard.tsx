@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import React from 'react'
+import React,{FC} from 'react'
 
 
 
 type Props = { skill: String };
 
-const SkillCard = ({skill}:Props) => {
+const SkillCard:FC = ({skill}:Props) => {
   return (
 
 <div className='mx-auto bg-[#3D3E42] w-[150px] h-[150px] rounded-xl text-white p-6 shadow-xl'>

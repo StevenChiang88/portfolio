@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,FC } from 'react'
 import { BsSunFill, BsMoonFill} from 'react-icons/bs';
 import {BiMenuAltRight} from "react-icons/bi"
 import Link from 'next/link';
 
 
-const NavBar = () => {
+const NavBar:FC = () => {
   const [darkMode, setDarkmode] = useState(false)
 
   const modeHandler =()=>{

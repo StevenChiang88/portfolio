@@ -3,18 +3,35 @@ import axios from 'axios'
 import React, { useState,FC } from 'react'
 import { getStorage, ref,uploadBytesResumable,getDownloadURL } from "firebase/storage";
 import app from "../firebase"
-const AddProject :FC = () => {
-const [project, setProject] = useState({
+
+type Project = {
   
+  "title": string,
+  "desc": string,
+  "img": string,
+  "github": string,
+  "link": string,
+  "skils": string[]
+
+}
+
+const AddProject :FC = () => {
+const [project, setProject] = useState<Project>({
+  "title": "",
+  "desc": "",
+  "img": "",
+  "github": "",
+  "link": "",
+  "skils": []
 })
-const [file, setFile] = useState<File | any>(null)
+const [file, setFile] = useState<File|null>(null)
 
 const uploadToFireBase = async()=>{
   const storage = getStorage(app)
-  const storageRef = ref(storage,file.name)
-
-  const uploadTask = uploadBytesResumable(storageRef, file);
-
+  if (file) {
+    const storageRef = ref(storage, file.name);
+    // perform operations on storageRef
+    const uploadTask = uploadBytesResumable(storageRef, file);
 // Register three observers:
 // 1. 'state_changed' observer, called any time the state changes
 // 2. Error observer, called on failure
@@ -42,23 +59,38 @@ uploadTask.on('state_changed',
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
       console.log('File available at', downloadURL);
+      setProject(prevProject => ({...prevProject, img: downloadURL}));
     });
   }
 );
+  }
+
+
 
 
 
 }
   return (
-    <div className=' w-full flex items-center justify-center overflow-x-auto'>
-   
-                <input type="file" onChange={(e:any)=>{setFile(e.target.files[0])}}/>
-                <input placeholder='title'/>
-                <input placeholder='description'/>
-                <input placeholder='skills'/>
-                <input placeholder='github link'/>
-                <input placeholder='demo link'/>
-                <button onClick={()=>{uploadToFireBase()}} className="border border-black px-4 py-2">Add Project</button>
+    <div className=' w-[300px] md:w-[500px] flex items-center justify-center  '>
+   <div className='flex gap-4 flex-col p-4'>
+   <input type="file" onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0];
+  if (file) {
+    setFile(file);
+  }
+}} />                <input placeholder='title'onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, title: e.target.value}));
+}} className='p-2 border-gray-400 border-2 rounded-md text-black '/>
+                <input placeholder='description' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, desc: e.target.value}));
+}}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
+                <input placeholder='skills' onChange={()=>{console.log(project,"測試")}}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
+                <input placeholder='github link' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, github: e.target.value}));
+}}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
+                <input placeholder='demo link' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, link: e.target.value}));
+}} className='p-2 border-gray-400 border-2 rounded-md text-black '/>
+                <button onClick={()=>{uploadToFireBase()}} className="border-2 border-gray-400 px-4 py-2">Add Project</button>
+
+   </div>
+               
 
                 </div>  
   )

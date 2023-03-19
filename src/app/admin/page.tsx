@@ -1,8 +1,12 @@
-
 import React from "react";
 import axios from "axios";
 import { type } from "os";
 import AddProject from "@/components/AddProject";
+
+
+
+
+
 type SingleData = {
   "_id":String,
   "title": String,
@@ -57,6 +61,7 @@ const AdminPage  = async () => {
             
             </tbody>
         </table>
+       
       </div>
     </div>
   );

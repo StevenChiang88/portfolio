@@ -16,6 +16,9 @@ type Project = {
 }
 
 const AddProject :FC = () => {
+
+const [skills,setSkills] = useState<String>("")
+
 const [project, setProject] = useState<Project>({
   "title": "",
   "desc": "",
@@ -25,6 +28,14 @@ const [project, setProject] = useState<Project>({
   "skils": []
 })
 const [file, setFile] = useState<File|null>(null)
+
+const covertStringtoArray = ()=>{
+ 
+  const test =skills.split(",")
+  setProject(prevProject => ({...prevProject, skils: test}));
+
+}
+
 
 const uploadToFireBase = async()=>{
   const storage = getStorage(app)
@@ -55,12 +66,19 @@ uploadTask.on('state_changed',
     // Handle unsuccessful uploads
   }, 
   () => {
+    covertStringtoArray()
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+    getDownloadURL(uploadTask.snapshot.ref)
+    .then((downloadURL) => {
       console.log('File available at', downloadURL);
       setProject(prevProject => ({...prevProject, img: downloadURL}));
+
+axios.post('http://localhost:3000/api/projects',project)
+    .then( (response) => console.log(response))
+    .catch( (error) => console.log(error))
     });
+
   }
 );
   }
@@ -82,13 +100,13 @@ uploadTask.on('state_changed',
 }} className='p-2 border-gray-400 border-2 rounded-md text-black '/>
                 <input placeholder='description' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, desc: e.target.value}));
 }}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
-                <input placeholder='skills' onChange={()=>{console.log(project,"測試")}}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
+                <input placeholder='skills' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setSkills(e.target.value)}}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
                 <input placeholder='github link' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, github: e.target.value}));
 }}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
                 <input placeholder='demo link' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, link: e.target.value}));
 }} className='p-2 border-gray-400 border-2 rounded-md text-black '/>
                 <button onClick={()=>{uploadToFireBase()}} className="border-2 border-gray-400 px-4 py-2">Add Project</button>
-
+<button onClick={()=>{console.log("一個完整project測試",project)}}>sada</button>
    </div>
                
 

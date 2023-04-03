@@ -26,7 +26,7 @@ return (
     <div >
       <GeneralBanner text={singleProject.title} />
       
-      <Image alt='網頁截圖' className='mx-auto w-full md:max-w-[1000px]' src={Corgishopscreen} />
+      <Image width={1000} height={1000} alt={singleProject.title} className='mx-auto w-full md:max-w-[1000px] ' src={singleProject.img} />
       
       <div className='p-4 mx-auto max-w-[1000px]'>
       <h3 >Using Skills</h3>
@@ -39,8 +39,8 @@ return (
      
 
 <div className='my-10 '>
-   <GeneralButton text="Github" link={singleProject.github} isBorder={true} />
-      <GeneralButton text="Live Demo" link={singleProject.link} isBorder={false} />
+   <GeneralButton text="Github" link={singleProject.github} isBorder={true} refer={singleProject.github}  />
+      <GeneralButton text="Live Demo" link={singleProject.link} isBorder={false} refer={singleProject.link}/>
      </div>
       </div>
       </div>

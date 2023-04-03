@@ -98,13 +98,15 @@ axios.post('http://localhost:3000/api/projects',project)
   }
 }} />                <input placeholder='title'onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, title: e.target.value}));
 }} className='p-2 border-gray-400 border-2 rounded-md text-black '/>
-                <input placeholder='description' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, desc: e.target.value}));
-}}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
+           
                 <input placeholder='skills' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setSkills(e.target.value)}}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
                 <input placeholder='github link' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, github: e.target.value}));
 }}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
                 <input placeholder='demo link' onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setProject(prev => ({...prev, link: e.target.value}));
 }} className='p-2 border-gray-400 border-2 rounded-md text-black '/>
+                
+                <textarea placeholder='description' onChange={(e: React.ChangeEvent<HTMLTextAreaElement>)=>{setProject(prev => ({...prev, desc: e.target.value}));
+}}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
                 <button onClick={()=>{uploadToFireBase()}} className="border-2 border-gray-400 px-4 py-2">Add Project</button>
 <button onClick={()=>{console.log("一個完整project測試",project)}}>sada</button>
    </div>

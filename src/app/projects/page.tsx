@@ -6,16 +6,16 @@ import ProjectCard from "@/components/ProjectCard";
 import { type } from "os";
 import { type NextPage } from "next";
 type SingleData = {
-  "_id":String,
-  "title": String,
-  "desc": String,
-  "img": String,
-  "github": String,
-  "link": String,
-  "skils": [String],
-  "createdAt": String,
-  "updatedAt":String,
-  "__v": Number
+  "_id":string,
+  "title": string,
+  "desc": string,
+  "img": string,
+  "github": string,
+  "link": string,
+  "skils": [string],
+  "createdAt": string,
+  "updatedAt":string,
+  "__v": number
 }
 
 async function fetchData() {
@@ -24,7 +24,7 @@ async function fetchData() {
 }
 
 
-const ProjectsPage: NextPage = async () => {
+const ProjectsPage = async () => {
   
   const projectLists:SingleData[] = await fetchData();
 //   const [filteredData, setFilteredData] = useState()

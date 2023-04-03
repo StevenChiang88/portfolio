@@ -1,15 +1,22 @@
 import Link from 'next/link';
 import React, { FC } from 'react'
 
-type ButtonProps = { text: string, link: string ,isBorder:Boolean  };
+type ButtonProps = { text: string, link: string ,isBorder:Boolean ,refer: string };
 
 
-const GeneralButton :FC<ButtonProps> = ({text,link,isBorder}) => {
+const GeneralButton :FC<ButtonProps> = ({text,link,isBorder,refer}) => {
 
   return (
-<Link href={`/${link}`}>
+<>  {refer? <a target='_blank' href={link}>
         <button className={`${isBorder? "border-black dark:border-white" : "border-transparent bg-[#E2A64A]" } border-2  mr-6 px-8 py-4 rounded-xl my-8 `}>{text}</button>
-        </Link>
+        </a>
+ :
+<Link href={`/${link}`}>    <button className={`${isBorder? "border-black dark:border-white" : "border-transparent bg-[#E2A64A]" } border-2  mr-6 px-8 py-4 rounded-xl my-8 `}>{text}</button>
+    </Link>   
+    }</>
+
+  
+
 
   )
 }

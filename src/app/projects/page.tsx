@@ -43,11 +43,10 @@ const ProjectsPage = async () => {
     <div className="flex flex-col items-center">
       <GeneralBanner text="Projects" />
 
-      <div className="flex flex-wrap gap-4 p-6  ">
+      {/* <div className="flex flex-wrap gap-4 p-6  ">
         <ProjectCategory  cat="React" /> 
         <ProjectCategory cat="Next" />
-        <ProjectCategory cat="React Natvie" />
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 max-w-[1600px] gap-8">
         {/* {

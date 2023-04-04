@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { FC } from 'react'
 
-type ButtonProps = { text: string, link: string ,isBorder:Boolean ,refer: string };
+type ButtonProps = { text: string, link: string ,isBorder:Boolean ,refer?: string };
 
 
 const GeneralButton :FC<ButtonProps> = ({text,link,isBorder,refer}) => {

@@ -108,7 +108,6 @@ axios.post('http://localhost:3000/api/projects',project)
                 <textarea placeholder='description' onChange={(e: React.ChangeEvent<HTMLTextAreaElement>)=>{setProject(prev => ({...prev, desc: e.target.value}));
 }}  className='p-2 border-gray-400 border-2 rounded-md text-black '/>
                 <button onClick={()=>{uploadToFireBase()}} className="border-2 border-gray-400 px-4 py-2">Add Project</button>
-<button onClick={()=>{console.log("一個完整project測試",project)}}>sada</button>
    </div>
                
 

@@ -61,9 +61,20 @@ const [navOpen, setNavOpen ] = useState(false)
 
  <div className={` sticky  top-20  ${navOpen? "": "hidden"}  h-[250px] p-8 bg-slate-500`}>
 <ul className="flex flex-col gap-8 ">
-      <li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Home</li>
-      <li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Projects</li>
-      <li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Contact</li>
+<Link onClick={()=>{  setNavOpen(!navOpen)
+}} href="/">  
+<li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Home</li>
+
+</Link>
+<Link onClick={()=>{  setNavOpen(!navOpen)
+}} href="projects">  
+<li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Projects</li>
+
+</Link><Link onClick={()=>{  setNavOpen(!navOpen)
+}} href="contact">  
+<li className='hover:text-[#E2A64A] duration-500 cursor-pointer'>Contact</li>
+
+</Link>
       <li className='cursor-pointer' onClick={()=>{setDarkmode(!darkMode)}}>
       {darkMode?<BsSunFill className='hover:text-[#E2A64A] duration-500 cursor-pointer' /> :<BsMoonFill className='hover:text-[#E2A64A] duration-500 cursor-pointer'/>    }
       </li>

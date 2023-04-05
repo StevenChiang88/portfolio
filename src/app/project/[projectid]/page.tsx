@@ -9,7 +9,7 @@ import Corgishopscreen from '../../../../public/Corgishopscreen.png'
 
 type Props = {
   params:{
-    projectid:String
+    projectid:string
   }
 }
 async function fetchData(id:String) {
@@ -31,7 +31,7 @@ return (
       <div className='p-4 mx-auto max-w-[1000px]'>
       <h3 >Using Skills</h3>
       <div className='flex gap-4 flex-wrap'> 
-{singleProject.skils.map((skill:String)=><UsingSkill  text={skill} />)}
+{singleProject.skils.map((skill:string)=><UsingSkill key={skill} text={skill} />)}
 
       </div>
       <h3>Description</h3>

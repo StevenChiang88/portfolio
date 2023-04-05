@@ -32,12 +32,12 @@ export default function Home() {
         <div className="my-16">
           <h3>Frontend Skills</h3>
           <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 max-w-[1000px] p-8 ">
-       {front.map((front)=> <SkillCard skill={front}/> )}
+       {front.map((front)=> <SkillCard key={front} skill={front}/> )}
       
           </div>
           <h3>Backend Skills</h3>
           <div className="mx-auto grid grid-cols-2 md:grid-cols-4  gap-12 max-w-[1000px] p-8 ">
-          {back.map((back)=> <SkillCard skill={back}/> )}
+          {back.map((back)=> <SkillCard key={back} skill={back}/> )}
 
           </div>
          

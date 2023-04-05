@@ -32,7 +32,7 @@ const ProjectsPage = async () => {
 // useEffect(()=>{setFilteredData(projectLists)},[projectLists])
 
 
-  const skillhandler = (skill:String)=>{
+  const skillhandler = (skill:string)=>{
     projectLists.filter(project=>{
     project.skils[0] == skill
   })
@@ -58,7 +58,7 @@ const ProjectsPage = async () => {
 <>
 {
        projectLists.map((project) => (
-          <ProjectCard  project={project} />
+          <ProjectCard key={project._id} project={project} />
        ))
         }
 </>

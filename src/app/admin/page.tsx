@@ -53,7 +53,7 @@ const AdminPage  = async () => {
           
             <tbody  >
            {projectLists.map((project)=>   
-            <tr className="flex w-[1000px] bg-blue-100 p-4">
+            <tr key={project._id} className="flex w-[1000px] bg-blue-100 p-4">
             <td className="flex-1 text-center">
               <Image alt={project.title} width={500} height={500} src={project.img} />
               

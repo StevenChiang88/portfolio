@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
       <div className='text-center text-black dark:text-white mx-auto '>
-        <h4>Hello, I'm</h4>
+        <h4>"Hello, I'm"</h4>
         <h1>Steven Chiang</h1>
         <h4>Junior Frontend Developer</h4>
         <div className='mx-auto'>

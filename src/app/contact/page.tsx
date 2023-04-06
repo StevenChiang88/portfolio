@@ -15,7 +15,7 @@ const ContactPage = () => {
  <div className=' flex flex-col md:flex-row items-center justify-between bg-gray-400 rounded-lg px-8 py-4 my-10'>
 
 <BsFillTelephoneFill className='text-[50px]  hover:text-[#E2A64A] duration-500 '/>
-<a href='tel:0968918897'>
+<a href='tel:0968918897' rel='noreferrer noopener'>
 <h4  className='cursor-pointer hover:text-[#E2A64A] duration-500'>0968-918-897</h4>
 
 </a>

@@ -11,7 +11,7 @@ const Footer:FC = () => {
       </a>
      </div>
      <div className='w-[60px] h-[60px] rounded-xl bg-black/75 flex items-center justify-center'>
-     <a target='_blank' href='https://github.com/StevenChiang88' rel='noreferrer noopener'>
+     <a target='_blank' rel='noreferrer noopener' href='https://github.com/StevenChiang88' >
 
       <BsGithub  className='cursor-pointer duration-500 hover:text-[#E2A64A] text-[25px] text-white'/>
       </a>

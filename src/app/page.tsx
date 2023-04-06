@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
       <div className='text-center text-black dark:text-white mx-auto '>
-        <h4>"Hello, I'm"</h4>
+        <h4>Hello, I&#39;m</h4>
         <h1>Steven Chiang</h1>
         <h4>Junior Frontend Developer</h4>
         <div className='mx-auto'>
@@ -23,7 +23,7 @@ export default function Home() {
           <div className=" flex-1">
           <Image className="mx-auto" alt="photo" width="250" height="250" src={towel} ></Image>
           </div>
-           <div className="m-auto p-12 flex-1 "><h5 className="text-left">Hi I'm Steven, graduated from the Tamkang University with a degree in Transportation Management.  Self learning frontend skills and also willing to learn the backend skills. Hoping that I could join your team!
+           <div className="m-auto p-12 flex-1 "><h5 className="text-left">Hi I&#39;m Steven, graduated from the Tamkang University with a degree in Transportation Management.  Self learning frontend skills and also willing to learn the backend skills. Hoping that I could join your team!
 
           </h5> 
            </div>

@@ -5,7 +5,6 @@ import axios from 'axios'
 import Image from 'next/image'
 import { type } from 'os'
 import React from 'react'
-import Corgishopscreen from '../../../../public/Corgishopscreen.png'
 
 type Props = {
   params:{

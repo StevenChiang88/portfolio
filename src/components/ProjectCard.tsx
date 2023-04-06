@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React,{FC} from 'react'
-import roxscreen from '../../public/roxscreen.png'
 import {AiOutlineFileSearch} from 'react-icons/ai'
 import Link from 'next/link'
 

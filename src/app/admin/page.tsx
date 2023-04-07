@@ -23,8 +23,8 @@ async function fetchData() {
 }
 
 async function deleteData(id:string) {
-  console.log(id)
-}
+  const res = await axios.delete(id)
+return res}
 
 
 const AdminPage  = async () => {

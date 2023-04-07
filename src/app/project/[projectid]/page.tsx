@@ -12,7 +12,7 @@ type Props = {
   }
 }
 async function fetchData(id:String) {
-  const res = await axios.get(`http://localhost:3000/api/projects/${id}`);
+  const res = await axios.get(`http://localhost:5000/api/projects/${id}`);
   return res.data;
 }
   export default async function ProjectPage({params:{projectid}}:Props) {

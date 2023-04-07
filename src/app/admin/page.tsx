@@ -18,20 +18,18 @@ type SingleData = {
   "__v": number
 }
 async function fetchData() {
-  const res = await axios.get("http://localhost:3000/api/projects");
+  const res = await axios.get("http://localhost:5000/api/projects");
   return res.data;
 }
 
 async function deleteData(id:string) {
   console.log(id)
-  // const res = await axios.delete("http://localhost:3000/api/projects");
 }
 
 
 const AdminPage  = async () => {
   const projectLists:SingleData[] = await fetchData();
 
-//   const [addProjectOpen , setAddProjectOpen] = useState(false)
 
   return (
     <div >

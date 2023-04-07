@@ -74,7 +74,7 @@ uploadTask.on('state_changed',
       console.log('File available at', downloadURL);
       setProject(prevProject => ({...prevProject, img: downloadURL}));
 
-axios.post('http://localhost:3000/api/projects',project)
+axios.post('http://localhost:5000/api/projects',project)
     .then( (response) => console.log(response))
     .catch( (error) => console.log(error))
     });

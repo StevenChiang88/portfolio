@@ -1,22 +1,6 @@
 import "./globals.css"
-import axios from "axios";
-import type { GetServerSideProps } from 'next'
 
-type SingleData = {
-  "_id":string,
-  "title": string,
-  "desc": string,
-  "img": string,
-  "github": string,
-  "link": string,
-  "skils": [string],
-  "createdAt": string,
-  "updatedAt":string,
-  "__v": number
-}
-type MypageProps ={
-  projects: SingleData[];
-}
+
 export default function Head() {
   return (
     <>
@@ -26,18 +10,4 @@ export default function Head() {
       <link rel="icon" href="/favicon.ico" />
     </>
   )
-}
-export const getServerSideProps: GetServerSideProps<MypageProps> = async () => {
-  try {
-    const response = await axios.get('http://localhost:5000/api/projects');
-    const projects = response.data;
-    console.log(projects,"測試")
-    return {
-      props: {
-        projects,
-      },
-    };
-  } catch (error) {
-    console.error(error);
-  }
 }

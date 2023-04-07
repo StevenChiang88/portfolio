@@ -18,7 +18,7 @@ type SingleData = {
   "__v": number
 }
 async function fetchData() {
-  const res = await axios.get("http://localhost:5000/api/projects");
+  const res = await axios.get("http://localhost:3000/api/projects");
   return res.data;
 }
 

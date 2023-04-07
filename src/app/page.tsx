@@ -3,32 +3,15 @@ import Image from 'next/image'
 import GeneralButton from "../components/GeneralButton"
 import towel from "../../public/towel.png"
 import SkillCard from "@/components/SkillCard"
-import type { GetServerSideProps } from 'next'
-import axios from "axios";
-import { type } from "os"
 
-type SingleData = {
-  "_id":string,
-  "title": string,
-  "desc": string,
-  "img": string,
-  "github": string,
-  "link": string,
-  "skils": [string],
-  "createdAt": string,
-  "updatedAt":string,
-  "__v": number
-}
-type MypageProps ={
-  projects: SingleData[];
-}
+
+
 const front =["html","css","js","tailwind","react","nextjs"]
 
 const back =["nodejs","express","mongodb"]
 
 
- function Home({projects}:MypageProps) {
-console.log(projects,"測試123")
+ function Home() {
   return (
       <div className='text-center text-black dark:text-white mx-auto '>
         <h4>Hello, I&#39;m</h4>
